@@ -7,7 +7,7 @@
 
 Joystick_ Joystick (  JOYSTICK_DEFAULT_REPORT_ID,
                       JOYSTICK_TYPE_JOYSTICK,
-                      32,     // Number of available buttons
+                      0,     // Number of available buttons
                       0,      // Number of available hat switches
                       true,   // X Axis
                       true,   // Y Axis
@@ -44,11 +44,11 @@ void setup() {
 void loop() {
   
 // Read Joystick
-  JoystickX = analogRead(YAW_PIN); // Hall effect sensor connects to this analog pin
+  JoystickX = analogRead(ROLL_PIN); // Hall effect sensor connects to this analog pin
   JoystickY = analogRead(PITCH_PIN); // Hall effect sensor connects to this analog pin
 
 // Read Rudder Pedals
-  JoystickZ = analogRead(RUDDER_PIN); // Hall effect sensor connects to this analog pin
+  JoystickZ = analogRead(YAW_PIN); // Hall effect sensor connects to this analog pin
    
 // Output Controls
   Joystick.setXAxis(JoystickX);
